@@ -1,12 +1,16 @@
-SELECT EmployeeID, MAX(total_Orders)
+SELECT  MAX(total.CNT_Orders) ,total.NAME
 FROM (
-SELECT COUNT(*) AS total_Orders ,EmployeeID
-FROM Orders
-GROUP BY EmployeeID
-)
+SELECT COUNT(*) AS CNT_Orders ,T_ORD.EmployeeID, T_EM.Lastname as NAME
+FROM Orders as T_ORD
+    JOIN Employees AS T_EM
+    ON T_ORD.EmployeeID = T_EM.EmployeeID
+GROUP BY T_ORD.EmployeeID
+) as total
 
 
 -- - Table : Orders
 -- - 조건 : 가장 많이 주문 받은 회사 직원명과 갯수
 -- 결과 :  EmployeeID	MAX(total_Orders)
 -- 			4			40
+
+-- Employee 테이블과 조인
