@@ -10,7 +10,7 @@ GROUP BY T_ORD.EmployeeID
 
 -- - Table : Orders
 -- - 조건 : 가장 많이 주문 받은 회사 직원명과 갯수
--- 결과 :  EmployeeID	MAX(total_Orders)
--- 			4			40
+-- 결과 :MAX(total.CNT_Orders)	NAME
+--              40	            Peacock
 
 -- Employee 테이블과 조인
